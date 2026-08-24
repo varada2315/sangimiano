@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-dark: #FAFAFA;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FAFAFB;
+  --border-card: rgba(0, 0, 0, 0.05);
+  --accent-orange: #000000;
+  --accent-orange-hover: #222222;
+  --text-main: #111111;
+  --text-muted: #76767A;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Space Grotesk', 'Outfit', sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F2F2F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CCCCCC;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Glow animation */
+@keyframes orangeGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.glow-accent {
+  animation: orangeGlow 3s infinite ease-in-out;
+}
